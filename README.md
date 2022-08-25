@@ -84,6 +84,22 @@ Unknown Text Stream
 	`mp4box "file.mov" -ttxt 3` (`4` is the ID of the subtitle track)
 3. You now get your (borked) TTXT file as an output in the directory of the MOV file.
 
-## Step 3: putting TeXML and TTXT together
+## Step 3: Putting TeXML and TTXT together
 
-We could now start manually copying and pasting subtitle contents from the TeXML file to the TTXT file. 
+We could now start manually copying and pasting subtitle contents from the TeXML file to the TTXT file. This is tedious work, however, and would result in copy-paste errors, RSI and mental insanity. Luckily, I put together a Python script which can automate this process for you. You can use it as follows:
+
+0. Install all dependencies:  
+	`pip install -r requirements.txt`
+1. `python texml.xml ttxt_in.ttxt ttxt_out.ttxt`
+
+Your TeXML and TTXT files will be merged, and the resulting output will be saved as ttxt_out.ttxt (or whatever you decide on the output filename).
+
+## Step 4: To SRT and beyond
+
+You can now use mp4box again to export the TTXT file to another file format, such as SRT.
+
+```
+mp4box -srt "ttxt_out.ttxt"
+```
+
+This will *finally* produce the output we originally hoped to get using ffmpeg.
