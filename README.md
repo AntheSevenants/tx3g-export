@@ -32,10 +32,10 @@ Another downside to having to use QuickTime Pro is that there is no way to autom
 Anyway, here's how to export the subtitles to the QuickTime TeXML format. 
 
 1. Open your file in QuickTime Pro.  
-	![2022-08-25_17-10-43_DProjectstx3g-exportREADME md_•_(DataVisualisation](https://user-images.githubusercontent.com/84721952/186732162-bc169895-2faa-426f-8825-a4f81892bcbf.png)
+	![QuickTime Pro](https://user-images.githubusercontent.com/84721952/186732162-bc169895-2faa-426f-8825-a4f81892bcbf.png)
 2. Press File > Export.
 3. Under "Export", select "Text to QuickTime TeXML".  
-	![2022-08-25_17-12-58_Save_exported_file_as](https://user-images.githubusercontent.com/84721952/186732200-b95e3981-3973-4b7c-b0a7-916f88e831b3.png)
+	![QuickTime Pro export dialog](https://user-images.githubusercontent.com/84721952/186732200-b95e3981-3973-4b7c-b0a7-916f88e831b3.png)
 4. You now have a QuickTime TeXML file.
 
 This would actually be a usable format, but unfortunately the subtitle duration is measured in some format I don't understand:
@@ -105,3 +105,5 @@ mp4box -srt "ttxt_out.ttxt"
 ```
 
 This will *finally* produce the output we originally hoped to get using ffmpeg.
+
+![Final SRT loaded in MPC-BE](https://user-images.githubusercontent.com/84721952/186733060-fc7c0a93-f645-4ba3-90b5-1efd30344200.png)
