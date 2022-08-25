@@ -65,7 +65,7 @@ Fortunately, we can use the borked TTXT format as a basis for our "true" subtitl
 1. First, we have to find out what the ID is of the subtitle track. You can find this by using the following command:  
 	`mp4box -info "file.mp4"`
 
-	```
+```
 # Track 3 Info - ID 4 - TimeScale 600
 Media Duration 00:00:48.720
 Track has 1 edits: track duration is 00:00:48.720
@@ -78,9 +78,8 @@ Unknown Text Stream
         RFC6381 Codec Parameters: text
         All samples are sync
         Max sample duration: 5328 / 600
-    ```
-
-    From the output, we can see that the subtitle has track ID 4 (not track ID 3, don't be confused!)
+```
+2. From the output, we can see that the subtitle has track ID 4 (not track ID 3, don't be confused!)
 2. Now, convert the embedded subtitles with the following command:  
 	`mp4box "file.mov" -ttxt 3` (`4` is the ID of the subtitle track)
 3. You now get your (borked) TTXT file as an output in the directory of the MOV file.
