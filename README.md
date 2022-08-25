@@ -32,9 +32,10 @@ Another downside to having to use QuickTime Pro is that there is no way to autom
 Anyway, here's how to export the subtitles to the QuickTime TeXML format. 
 
 1. Open your file in QuickTime Pro.  
-	todo image
+	![2022-08-25_17-10-43_DProjectstx3g-exportREADME md_•_(DataVisualisation](https://user-images.githubusercontent.com/84721952/186732162-bc169895-2faa-426f-8825-a4f81892bcbf.png)
 2. Press File > Export.
-3. Under "Export", select "Text to QuickTime TeXML".
+3. Under "Export", select "Text to QuickTime TeXML".  
+	![2022-08-25_17-12-58_Save_exported_file_as](https://user-images.githubusercontent.com/84721952/186732200-b95e3981-3973-4b7c-b0a7-916f88e831b3.png)
 4. You now have a QuickTime TeXML file.
 
 This would actually be a usable format, but unfortunately the subtitle duration is measured in some format I don't understand:
