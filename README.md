@@ -61,10 +61,10 @@ This would actually be a usable format, but unfortunately the subtitle duration 
 
 ## Step 2: Exporting subtitles to TTXT
 
-Fortunately, we can use the borked TTXT format as a basis for our "true" subtitle file. Even though the lines containing foreign characters are blanked out, the *order* of the subtitles corresponds to that of the QuickTime TeXML. To do this with MP4box:
+Fortunately, we can use the borked TTXT format as a basis for our "true" subtitle file. Even though the lines containing foreign characters are blanked out, the *order* of the subtitles corresponds to that of the QuickTime TeXML. To export to a TTXT file with MP4box:
 
 1. First, we have to find out what the ID is of the subtitle track. You can find this by using the following command:  
-	`mp4box -info "file.mp4"`
+	`mp4box -info "file.mov"`
 
 ```
 # Track 3 Info - ID 4 - TimeScale 600
@@ -82,22 +82,23 @@ Unknown Text Stream
 ```
 2. From the output, we can see that the subtitle has track ID 4 (not track ID 3, don't be confused!)
 2. Now, convert the embedded subtitles with the following command:  
-	`mp4box "file.mov" -ttxt 3` (`4` is the ID of the subtitle track)
+	`mp4box "file.mov" -ttxt 4` (`4` is the ID of the subtitle track)
 3. You now get your (borked) TTXT file as an output in the directory of the MOV file.
 
 ## Step 3: Putting TeXML and TTXT together
 
 We could now start manually copying and pasting subtitle contents from the TeXML file to the TTXT file. This is tedious work, however, and would result in copy-paste errors, RSI and mental insanity. Luckily, I put together a Python script which can automate this process for you. You can use it as follows:
 
-0. Install all dependencies:  
+0. Clone this repository.
+1. Install all dependencies:  
 	`pip install -r requirements.txt`
-1. `python texml.xml ttxt_in.ttxt ttxt_out.ttxt`
+1. `python texml2ttxt.py texml.xml ttxt_in.ttxt ttxt_out.ttxt`
 
-Your TeXML and TTXT files will be merged, and the resulting output will be saved as ttxt_out.ttxt (or whatever you decide on the output filename).
+Your TeXML and TTXT files will be merged, and the resulting output will be saved as ttxt_out.ttxt (or whatever you decide on as the output filename).
 
 ## Step 4: To SRT and beyond
 
-You can now use mp4box again to export the TTXT file to another file format, such as SRT.
+You can now use MP4box again to export the TTXT file to another file format, such as SRT.
 
 ```
 mp4box -srt "ttxt_out.ttxt"
