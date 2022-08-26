@@ -132,3 +132,13 @@ mp4box -srt "ttxt_out.ttxt"
 This will *finally* produce the output we originally hoped to get using ffmpeg.
 
 ![Final SRT loaded in MPC-BE](https://user-images.githubusercontent.com/84721952/186733060-fc7c0a93-f645-4ba3-90b5-1efd30344200.png)
+
+### BONUS: bulk conversion
+
+If you used the bulk conversion script to combine the TeXML and TTXT files, you probably also want to bulk convert the resulting TTXT files to SRT. Don't worry. I've got you covered. You need MP4box installed on your machine, and callable from anywhere (its install directory needs to be in your environment). This command takes all TTXT files from `out` and exports them to SRT. These will end up in the `srt` directory.
+
+```
+python ttxt2srt.py out srt
+```
+
+Finally, sweet automation!
