@@ -1,10 +1,10 @@
 from lxml import etree
 
-class TXTT:
-	def __init__(self, txtt_path):
-		self.txtt_path = txtt_path
+class TTXT:
+	def __init__(self, ttxt_path):
+		self.ttxt_path = ttxt_path
 
-		with open(self.txtt_path, "rb") as reader:
+		with open(self.ttxt_path, "rb") as reader:
 			raw_text = reader.read()
 
 		#raw_text = raw_text.decode("UTF-8")
