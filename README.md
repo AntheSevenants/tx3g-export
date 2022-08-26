@@ -111,9 +111,9 @@ Your TeXML and TTXT files will be merged, and the resulting output will be saved
 
 If you a bunch of files, you can first do step 1 for all files, then step 2 for all files. Once you have collected both your TeXML and TTXT files, put them both in separate directories. For example:
 - all TeXML files in a directory `source_tx3g`
-- all TTXT files in a directory `source_txtt`
+- all TTXT files in a directory `source_ttxt`
 
-Now you can use my special bulk conversion version of the script to combine your files in bulk. **Make sure that they have the same base name:** for example, `movie.xml` and `movie.ttxt`. The script won't know what files to put together if they have different names! Syntax is as follows:
+Now you can use my special bulk conversion version of the script to combine your files in bulk. **Make sure that they have the same base names:** for example, `movie.xml` and `movie.ttxt`. The script won't know what files to put together if they have different names! Syntax is as follows:
 
 ```
 python texml2ttxt_bulk.py source_tx3g source_txtt out
