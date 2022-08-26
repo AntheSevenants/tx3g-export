@@ -107,6 +107,20 @@ We could now start manually copying and pasting subtitle contents from the TeXML
 
 Your TeXML and TTXT files will be merged, and the resulting output will be saved as ttxt_out.ttxt (or whatever you decide on as the output filename).
 
+### BONUS: bulk conversion
+
+If you a bunch of files, you can first do step 1 for all files, then step 2 for all files. Once you have collected both your TeXML and TTXT files, put them both in separate directories. For example:
+- all TeXML files in a directory `source_tx3g`
+- all TTXT files in a directory `source_txtt`
+
+Now you can use my special bulk conversion version of the script to combine your files in bulk. **Make sure that they have the same base name:** for example, `movie.xml` and `movie.ttxt`. The script won't know what files to put together if they have different names! Syntax is as follows:
+
+```
+python texml2ttxt_bulk.py source_tx3g source_txtt out
+```
+
+(with `out` being the output directory for your files)
+
 ## Step 4: To SRT and beyond
 
 You can now use MP4box again to export the TTXT file to another file format, such as SRT.
