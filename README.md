@@ -38,6 +38,8 @@ Anyway, here's how to export the subtitles to the QuickTime TeXML format.
 	![QuickTime Pro export dialog](https://user-images.githubusercontent.com/84721952/186732200-b95e3981-3973-4b7c-b0a7-916f88e831b3.png)
 4. You now have a QuickTime TeXML file.
 
+(If you have multiple subtitle streams, QuickTime will only export the first one. To export a non-first subtitle stream, press Window > Movie Properties, click the desired subtitle stream in the menu, then click the 'Extract' button. A new window will pop up with *only* the subtitles. You can now follow along again from Step 2.)
+
 This would actually be a usable format, but unfortunately the subtitle duration is measured in some format I don't understand:
 ```xml
 <sample duration="601" keyframe="true">
